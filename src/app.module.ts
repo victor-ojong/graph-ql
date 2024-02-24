@@ -7,6 +7,8 @@ import { join } from 'path';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Pet } from './pets/pets.entity';
+import { BookingsModule } from './bookings/bookings.module';
+import { EcommModule } from './ecomm/ecomm.module';
 
 @Module({
   imports: [
@@ -22,6 +24,10 @@ import { Pet } from './pets/pets.entity';
       entities: [Pet],
       synchronize: true,
     }),
+
+    BookingsModule,
+
+    EcommModule,
   ],
   controllers: [AppController],
   providers: [AppService],
